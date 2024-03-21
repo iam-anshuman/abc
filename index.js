@@ -18,6 +18,11 @@ connectToMongoDB("mongodb+srv://anshumant72:NqnkK4BkdQpFpNdN@cluster0.djhgttk.mo
 const app = express();
 const PORT = 3000;
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    next();
+});
+
 app.use(cors({
     origin:"*",
     optionsSuccessStatus: 200
