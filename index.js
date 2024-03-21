@@ -18,7 +18,10 @@ connectToMongoDB("mongodb+srv://anshumant72:NqnkK4BkdQpFpNdN@cluster0.djhgttk.mo
 const app = express();
 const PORT = 3000;
 
-app.use(cors())
+app.use(cors({
+    origin:"*",
+    optionsSuccessStatus: 200
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(cookieParser());
